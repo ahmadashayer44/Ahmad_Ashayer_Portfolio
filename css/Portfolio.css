@@ -3,6 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #05132c;
   color: #fff;
@@ -44,6 +48,7 @@ header a:hover {
   align-items: center;
   animation: fadeIn 3s ease-in-out;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -60,6 +65,9 @@ header a:hover {
 h1 span {
   color: #3ab5fc;
 }
+.multiple-text {
+  color: #3ab5fc;
+}
 #details h2 {
   font-size: 30px;
   margin-bottom: 20px;
@@ -68,14 +76,18 @@ h1 span {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: move 1.5s ease-in-out;
+  animation: updown 1.5s ease-in-out infinite;
 }
-@keyframes move {
-  from {
-    transform: translateX(-100%);
+
+@keyframes updown {
+  0% {
+    transform: translateY(-10px);
   }
-  to {
-    transform: translateX(0);
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
   }
 }
 #image img {
@@ -109,12 +121,21 @@ h1 span {
     display: none;
   }
 }
-#skills {
+.skills {
   margin-top: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.section {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 2.5s ease-in-out;
+}
+.section.animation-trasform {
+  opacity: 1;
+  transform: translateY(0);
 }
 #skills h1 {
   font-size: 50px;
@@ -152,4 +173,76 @@ h1 span {
 .skill:hover {
   transform: scale(1.1);
   transition: all 0.3s ease-in-out;
+}
+#projects {
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+#projects h1 {
+  font-size: 50px;
+  margin: 50px 0;
+  text-align: center;
+}
+#projects-container {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  width: 100%;
+}
+.project {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  border-left: 5px solid #0f72ac;
+  border-bottom: 5px solid #0f72ac;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+.project img {
+  transition: filter 0.5s ease-in-out;
+  height: 300px;
+  width: 500px;
+}
+.project:hover img {
+  filter: brightness(20%);
+}
+.project:hover a {
+  visibility: visible;
+}
+.project a {
+  position: absolute;
+  top: 30%;
+  color: #fff;
+  font-size: 30px;
+  text-decoration: none;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+.project a:hover {
+  color: #3ab5fc;
+}
+.project p {
+  font-size: 23px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 1450px) {
+  #projects-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .project {
+    scale: 0.8;
+  }
 }
