@@ -17,6 +17,7 @@ header {
   align-items: center;
   padding: 20px 0;
   z-index: 500;
+  background-color: #05132c;
 }
 header a {
   text-decoration: none;
@@ -107,4 +108,48 @@ h1 span {
   header {
     display: none;
   }
+}
+#skills {
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#skills h1 {
+  font-size: 50px;
+  margin: 50px 0;
+  text-align: center;
+}
+#skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+  place-items: center;
+  width: 100%;
+}
+.skill img {
+  width: 200px;
+  height: 200px;
+}
+.skill .h2 {
+  text-align: center;
+}
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 5px 5px 0 #0f72ac;
+}
+.skill img:hover {
+  transform: rotate3d(0, 1, 0, 360deg);
+  transition: all 0.3s ease-in-out;
+}
+.skill:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
 }
