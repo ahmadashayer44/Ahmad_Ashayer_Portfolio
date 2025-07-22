@@ -121,12 +121,12 @@ h1 span {
 }
 .section-right {
   opacity: 0;
-  transform: translateX(100px);
+  transform: translateX(17px);
   transition: all 1.2s ease-in-out;
 }
 .section-left {
   opacity: 0;
-  transform: translateX(-100px);
+  transform: translateX(-17px);
   transition: all 1.2s ease-in-out;
 }
 .section-right.right-trasform,
@@ -137,6 +137,12 @@ h1 span {
 .section.animation-trasform {
   opacity: 1;
   transform: translateY(0);
+}
+#skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 #skills h1 {
   font-size: 50px;
@@ -239,6 +245,7 @@ h1 span {
   padding: 4rem 2rem;
   text-align: center;
   margin-top: 10%;
+  width: 100%;
 }
 
 .cv h1 {
