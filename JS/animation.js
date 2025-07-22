@@ -21,3 +21,27 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 sections.forEach((sec) => observer.observe(sec));
+
+const sections2 = document.querySelectorAll(".section-right");
+
+const observer2 = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("right-trasform");
+    }
+  });
+});
+
+sections2.forEach((sec) => observer2.observe(sec));
+
+const sections3 = document.querySelectorAll(".section-left");
+
+const observer3 = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("left-trasform");
+    }
+  });
+});
+
+sections3.forEach((sec) => observer3.observe(sec));

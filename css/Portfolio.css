@@ -122,7 +122,7 @@ h1 span {
   }
 }
 .skills {
-  margin-top: 10%;
+  margin-top: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,6 +132,21 @@ h1 span {
   opacity: 0;
   transform: translateY(100px);
   transition: all 2.5s ease-in-out;
+}
+.section-right {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 2.5s ease-in-out;
+}
+.section-left {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 2.5s ease-in-out;
+}
+.section-right.right-trasform,
+.section-left.left-trasform {
+  opacity: 1;
+  transform: translateX(0);
 }
 .section.animation-trasform {
   opacity: 1;
@@ -150,8 +165,8 @@ h1 span {
   width: 100%;
 }
 .skill img {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
 }
 .skill .h2 {
   text-align: center;
@@ -175,7 +190,7 @@ h1 span {
   transition: all 0.3s ease-in-out;
 }
 #projects {
-  margin-top: 10%;
+  margin-top: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -245,4 +260,95 @@ h1 span {
   .project {
     scale: 0.8;
   }
+}
+@media screen and (max-width: 1000px) {
+  #education {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+.cv {
+  padding: 4rem 2rem;
+  text-align: center;
+  margin-top: 10%;
+}
+
+.cv h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.cv-description {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.cv-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #0077cc;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.cv-button:hover {
+  background-color: #005fa3;
+}
+#education {
+  margin-top: 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10%;
+}
+#education-left-container h2 span {
+  color: #0f72ac;
+}
+#education-right-container img {
+  width: 400px;
+  height: 400px;
+  transition: all 0.3s ease-in-out;
+  animation: float 2s ease-in-out infinite;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+    filter: brightness(60%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+#education-right-container img:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 5px 5px 5px #0f72ac;
+}
+#education-left-container h1 {
+  font-size: 60px;
+}
+#education-left-container h2 {
+  font-size: 40px;
+}
+#education-left-container p {
+  font-size: 30px;
+}
+#education-left-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border-left: 5px solid #0f72ac;
+  border-bottom: 5px solid #0f72ac;
+  padding: 20px;
 }
