@@ -45,3 +45,8 @@ const observer3 = new IntersectionObserver((entries) => {
 });
 
 sections3.forEach((sec) => observer3.observe(sec));
+
+function toggleMenu() {
+  const nav = document.getElementById("navigation");
+  nav.classList.toggle("show");
+}
